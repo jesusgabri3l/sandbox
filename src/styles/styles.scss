@@ -1,0 +1,73 @@
+@import "normalize";
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+@mixin logoTextArea($imgURL) {    
+        background-image: url($imgURL);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        bottom: 20px;
+        content: '';
+        height: 40px;
+        opacity: 1;
+        position: absolute;
+        right: 20px;
+        transition: all 0.4s;
+        width: 40px;
+        z-index: 1000;
+}
+*{
+    box-sizing: border-box;
+}
+.navbar {
+    align-items: center;
+    background-color: #1e272e;
+    display: flex;
+    height: 40px;
+    justify-content: end;
+    padding: 0 16px;
+    button {
+        background-color: #10ac84;
+        border-radius: 8px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-family: 'Ubuntu Mono', monospace;
+        font-size: 18px;
+        font-weight: 700;
+        height: 100%;
+        outline: none;
+        padding: 0 16px;
+        width: 200px;
+    }
+}
+.sandbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: calc(100vh - 40px);
+}
+
+.html {
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    &::after{
+        @include logoTextArea('https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/2048px-HTML5_logo_and_wordmark.svg.png');        
+    }
+}
+.css {
+    position: relative;
+    &::after {
+        @include logoTextArea('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png');        
+    }
+}
+.javascript {
+    position: relative;
+    &::after{
+        @include logoTextArea('https://logos-world.net/wp-content/uploads/2023/02/JavaScript-Logo.png');        
+    }
+}
+.demo {
+    border: 1px solid #000;
+    height: 100%;
+    width: 100%;
+}
